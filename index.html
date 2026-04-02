@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birat Shiwakoti | Pirate of the Sea</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #e9eefc;
+      --muted: rgba(233, 238, 252, 0.7);
+      --accent: #7c4dff;
+      --accent2: #00e5ff;
+      --glow: rgba(124, 77, 255, 0.45);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, rgba(124, 77, 255, 0.25), transparent 60%),
+                  radial-gradient(circle at bottom, rgba(0, 229, 255, 0.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 18px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 920px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .hero {
+      padding: 32px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(124, 77, 255, 0.14), rgba(0, 229, 255, 0.08));
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(124, 77, 255, 0.55), transparent 65%);
+      filter: blur(10px);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .tagline {
+      margin-top: 18px;
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(124, 77, 255, 0.18);
+      border: 1px solid rgba(124, 77, 255, 0.35);
+      box-shadow: 0 0 18px var(--glow);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 28px rgba(0,0,0,0.55);
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border: 1px solid rgba(124, 77, 255, 0.55);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1.02rem;
+    }
+
+    .highlight {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .ability-box {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.22);
+      font-size: 0.98rem;
+      color: rgba(233, 238, 252, 0.9);
+      line-height: 1.55;
+    }
+
+    .ability-box span {
+      color: var(--accent2);
+      font-weight: 800;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+      color: rgba(233, 238, 252, 0.5);
+      font-size: 0.9rem;
+    }
+
+    .btns {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, rgba(124, 77, 255, 0.55), rgba(0, 229, 255, 0.45));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .btn.primary:hover {
+      box-shadow: 0 0 20px rgba(124, 77, 255, 0.35);
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Birat Shiwakoti</h1>
+      <p class="subtitle">
+        Pirate of the deep seas, feared by enemies and respected by legends.
+        I sail through storms and shadows, chasing freedom and treasure across the endless ocean.
+      </p>
+      <div class="tagline">☠️ Captain of the Unmatched Seas</div>
+
+      <div class="btns">
+        <a class="btn primary" href="#about">Enter My Story</a>
+        <a class="btn" href="#ability">View My Ability</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card" id="about">
+        <h2>🏴‍☠️ About Me</h2>
+        <p>
+          My name is <span class="highlight">Birat Shiwakoti</span>, a pirate of the sea whose name echoes
+          across the waves. I don’t sail for rules, I sail for adventure, power, and destiny.
+          The world calls pirates criminals — I call them <span class="highlight">cowards who fear freedom</span>.
+        </p>
+        <p style="margin-top: 12px;">
+          From the darkest oceans to the brightest horizons, I chase legends and create my own.
+          My crew follows me not because they must, but because they believe in the storm I bring.
+        </p>
+      </div>
+
+      <div class="card" id="ability">
+        <h2>⚡ Special Ability</h2>
+        <p>
+          I possess a rare and terrifying power that makes me different from every other pirate sailing the seas.
+        </p>
+
+        <div class="ability-box">
+          <span>Devil Fruit Copy Ability:</span><br/>
+          I can copy the powers of any other Devil Fruit user and use their abilities for
+          <span>30 minutes</span> at full strength.
+        </div>
+
+        <p style="margin-top: 12px;">
+          For half an hour, I become a living nightmare — fire, lightning, ice, darkness, beasts, or gods.
+          When time ends, the borrowed power fades... but the legend remains.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🌊 Pirate Creed</h2>
+      <p>
+        I fear no storm, no enemy, and no empire. The sea is my home, the sky is my map,
+        and freedom is the treasure I hunt.
+      </p>
+      <p style="margin-top: 12px;">
+        My goal is simple: to become the pirate whose name is written in history forever.
+      </p>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> Birat Shiwakoti — Pirate of the Sea
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
